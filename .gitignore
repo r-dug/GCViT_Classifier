@@ -2,8 +2,8 @@
 __pycache__
 
 # generated for users of tool
-training/labels.txt
-training/config.py
+gcvit/training/labels.txt
+gcvit/training/config.py
 
 # generated for users of tool and big
 assets/models/tf/* 

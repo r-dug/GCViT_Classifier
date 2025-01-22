@@ -27,7 +27,7 @@ def train(model: keras.Model, train_layers:int, phase:int, train_data:tf.data.Da
     """
     # Load Weights
     ckpt_path = keras.utils.get_file(ckpt_link.split("/")[-1], ckpt_link)
-    model.load_weights(ckpt_path, skip_mismatch=True)
+    model.load_weights(CHECKPOINT_PATH, skip_mismatch=True)
 
     # freeze non training layers
     for layer in model.layers:
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     out = model(input)
 
     # training in phases, iteratively deepening the layers we train
-    train(model=model, train_layers=1, phase=1, train_data=train_data, val_data=val_data)
+    # train(model=model, train_layers=1, phase=1, train_data=train_data, val_data=val_data)
     train(model=model, train_layers=3, phase=2, train_data=train_data, val_data=val_data)
     train(model=model, train_layers=4, phase=3, train_data=train_data, val_data=val_data)
-    train(model=model, train_layers=5, phase=4, train_data=train_data, val_data=val_data)
+    # train(model=model, train_layers=5, phase=4, train_data=train_data, val_data=val_data)
