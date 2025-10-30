@@ -20,9 +20,7 @@
 <a href="https://numpy.org/">
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" alt="Numpy" width="115" height="75">
 </a>
-<a href="https://numpy.org/">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" alt="Numpy" width="115" height="75">
-</a>
+
 ## Overview
 
 This repository contains my code for preparing and fine tuning a Global Context Vision Transformer model for image classification. It builds upon a [previous project](https://github.com/r-dug/Mushroom_Classifier) attempting to create a classifier.  After spending some more time reviewing some papers:
