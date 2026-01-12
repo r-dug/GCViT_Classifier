@@ -59,9 +59,7 @@ def train(model: keras.Model, train_layers:int, phase:int, train_data:tf.data.Da
     except Exception as e:
         print(e)
 
-
-if __name__ == "__main__":
-    
+def main():
     train_data, val_data = Data.build_train_and_val()
     
     class_names = train_data.class_names
@@ -86,3 +84,7 @@ if __name__ == "__main__":
     train(model=model, train_layers=3, phase=2, train_data=train_data, val_data=val_data)
     train(model=model, train_layers=4, phase=3, train_data=train_data, val_data=val_data)
     # train(model=model, train_layers=5, phase=4, train_data=train_data, val_data=val_data)
+
+if __name__ == "__main__":
+    
+    main()
