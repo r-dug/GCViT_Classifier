@@ -1,10 +1,2 @@
-from .model import GCViT
-from .layers import attention
-from .layers import block
-from .layers import embedding
-from .layers import feature
-from .layers import level
-from .training import config
-from .training import data
-from .training import util
-from . import main
+__all__ = []
+__version__ = "0.1.0"
