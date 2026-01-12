@@ -50,17 +50,26 @@ class Data():
         """
         # create dataset with builtin tf tools... 
         # This function is noted as deprecated, but has been working fine for a long time.
-        train_data, val_data = image_dataset_from_directory(  
-            DATASET_DIR,
-            labels = 'inferred',
-            label_mode = 'categorical',
-            image_size= IMAGE_SIZE,
-            validation_split = 0.2,
-            subset = 'both',
-            crop_to_aspect_ratio = True,
-            batch_size= BATCH_SIZE,
-            shuffle=True,
-            seed=244
-        )
+        if DATASET_NAME == "cifar10":
+            (x_train, y_train), (x_val, y_val) = tf.keras.datasets.cifar10.load_data()
+
+            x_train = x_train.astype("float32") / 255.0
+            x_val = x_val.astype("float32") / 255.0
+        
+            train_ds = tf.data.Dataset.from_tensor_slices((x_train, y_train)).shuffle(10000).batch(BATCH_SIZE).prefetch(AUTO)
+            val_ds = tf.data.Dataset.from_tensor_slices((x_val, y_val)).batch(BATCH_SIZE).prefetch(AUTO)
+        else:
+            train_data, val_data = image_dataset_from_directory(  
+                DATASET_DIR,
+                labels = 'inferred',
+                label_mode = 'categorical',
+                image_size= IMAGE_SIZE,
+                validation_split = 0.2,
+                subset = 'both',
+                crop_to_aspect_ratio = True,
+                batch_size= BATCH_SIZE,
+                shuffle=True,
+                seed=244
+            )
 
         return train_data, val_data
