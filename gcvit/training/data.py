@@ -63,6 +63,7 @@ class Data():
                 "ship",
                 "truck",
             ]
+            n_classes = len(CIFAR10_CLASS_NAMES)
             (x_train, y_train), (x_val, y_val) = tf.keras.datasets.cifar10.load_data()
 
             x_train = x_train.astype("float32") / 255.0
@@ -73,7 +74,6 @@ class Data():
 
             train_data = train_data.map(lambda x, y: (x, tf.one_hot(tf.squeeze(y, -1), depth=n_classes)))
             val_data   = val_data.map(lambda x, y: (x, tf.one_hot(tf.squeeze(y, -1), depth=n_classes)))
-
 
             train_data.class_names = CIFAR10_CLASS_NAMES
             val_data.class_names = CIFAR10_CLASS_NAMES
