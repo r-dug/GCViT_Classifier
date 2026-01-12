@@ -13,4 +13,9 @@ setup(
         "scikit-learn",
         "tqdm",
     ],
+    entry_points={
+        "console_scripts": [
+            "gcvit-train = gcvit.train:main",
+        ],
+    },
 )
