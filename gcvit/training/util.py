@@ -2,7 +2,7 @@ import tensorflow as tf
 
 import matplotlib.pyplot as plt
 
-from .config import *
+from gcvit.training.config import *
 
 class Util():
     @staticmethod
