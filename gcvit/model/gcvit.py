@@ -3,7 +3,9 @@ from keras import layers
 
 import numpy as np
 
-from layers import PatchEmbed, Level
+from gcvit.layers.embedding import PatchEmbed
+from gcvit.layers.level import Level
+
 
 class GCViT(keras.Model):
     """GCViT model.
