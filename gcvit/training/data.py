@@ -5,7 +5,7 @@ from tensorflow.keras.preprocessing import image_dataset_from_directory
 import keras
 from keras import layers
 
-from .config import *
+from gcvit.training.config import *
 class Data():
     @staticmethod
     def data_augmenter() -> keras.Sequential:
