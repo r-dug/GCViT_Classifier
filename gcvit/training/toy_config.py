@@ -37,11 +37,11 @@ DATASET_DIR = None         # unused for CIFAR-10
 
 # ---- Model input dims ----
 # CIFAR-10 is 32x32. If your model expects 224x224, you can resize in the data pipeline.
-IMAGE_SIZE = (32, 32)
-INPUT_SHAPE = (32, 32, 3)
+IMAGE_SIZE = (224, 224)
+INPUT_SHAPE = (224, 224, 3)
 
 # ---- Training hyperparameters (fast) ----
-BATCH_SIZE = 64
+BATCH_SIZE = 8
 EPOCHS = 2
 
 # Reproducibility
