@@ -3,8 +3,8 @@ from keras import ops
 from keras import layers
 from keras_cv.layers import DropPath
 
-from .attention import WindowAttention
-from .feature import MLP
+from gcvit.layers.attention import WindowAttention
+from gcvit.layers.feature import MLP
 
 class Block(layers.Layer):
     """GCViT block.
