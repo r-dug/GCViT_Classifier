@@ -56,8 +56,9 @@ class Data():
             x_train = x_train.astype("float32") / 255.0
             x_val = x_val.astype("float32") / 255.0
         
-            train_ds = tf.data.Dataset.from_tensor_slices((x_train, y_train)).shuffle(10000).batch(BATCH_SIZE).prefetch(AUTO)
-            val_ds = tf.data.Dataset.from_tensor_slices((x_val, y_val)).batch(BATCH_SIZE).prefetch(AUTO)
+            train_data = tf.data.Dataset.from_tensor_slices((x_train, y_train)).shuffle(10000).batch(BATCH_SIZE).prefetch(AUTO)
+            val_data = tf.data.Dataset.from_tensor_slices((x_val, y_val)).batch(BATCH_SIZE).prefetch(AUTO)
+            
         else:
             train_data, val_data = image_dataset_from_directory(  
                 DATASET_DIR,
