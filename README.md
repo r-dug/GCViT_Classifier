@@ -4,9 +4,9 @@
 
 - [Tech Stack](#tech-stack)
 - [Overview](#overview)
-- [Quick Start](#QuickStart)
+- [Quick Start](#Quick-Start)
 - [Weights and Initialization](#Weights-and-Initialization)
-- [## Training Details](#Training-Details)
+- [Training Details](#Training-Details)
 - [Perspective](#Perspective)
 - [Acknowledgements](#Acknowledgements)
 
