@@ -41,6 +41,7 @@ class Data():
         Custom data preprocessing function, mapping data augmentation to validation (or test) image dataset.
         """
         def normalize(image, label):
+            image = tf.image.resize(image, (224,224), method="bilinear")
             image = image / 255   # normalization
             return image, label
         return dataset.map(normalize, AUTO).prefetch(AUTO)
