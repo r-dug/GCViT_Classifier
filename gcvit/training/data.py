@@ -15,6 +15,7 @@ class Data():
             tf.keras.Sequential
         '''
         augmenter = keras.Sequential([ 
+            layers.Resizing(224,224),
             layers.Rescaling(scale=1./255),
             layers.RandomFlip("horizontal and vertical"),
             layers.RandomRotation(     factor = 0.1, 
