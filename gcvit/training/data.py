@@ -51,6 +51,18 @@ class Data():
         # create dataset with builtin tf tools... 
         # This function is noted as deprecated, but has been working fine for a long time.
         if DATASET_NAME == "cifar10":
+            CIFAR10_CLASS_NAMES = [
+                "airplane",
+                "automobile",
+                "bird",
+                "cat",
+                "deer",
+                "dog",
+                "frog",
+                "horse",
+                "ship",
+                "truck",
+            ]
             (x_train, y_train), (x_val, y_val) = tf.keras.datasets.cifar10.load_data()
 
             x_train = x_train.astype("float32") / 255.0
@@ -58,6 +70,9 @@ class Data():
         
             train_data = tf.data.Dataset.from_tensor_slices((x_train, y_train)).shuffle(10000).batch(BATCH_SIZE).prefetch(AUTO)
             val_data = tf.data.Dataset.from_tensor_slices((x_val, y_val)).batch(BATCH_SIZE).prefetch(AUTO)
+
+            train_data.class_names = CIFAR10_CLASS_NAMES
+            val_data.class_names = CIFAR10_CLASS_NAMES
             
         else:
             train_data, val_data = image_dataset_from_directory(  
