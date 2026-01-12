@@ -71,6 +71,10 @@ class Data():
             train_data = tf.data.Dataset.from_tensor_slices((x_train, y_train)).shuffle(10000).batch(BATCH_SIZE).prefetch(AUTO)
             val_data = tf.data.Dataset.from_tensor_slices((x_val, y_val)).batch(BATCH_SIZE).prefetch(AUTO)
 
+            train_data = train_data.map(lambda x, y: (x, tf.one_hot(tf.squeeze(y, -1), depth=n_classes)))
+            val_data   = val_data.map(lambda x, y: (x, tf.one_hot(tf.squeeze(y, -1), depth=n_classes)))
+
+
             train_data.class_names = CIFAR10_CLASS_NAMES
             val_data.class_names = CIFAR10_CLASS_NAMES
             
