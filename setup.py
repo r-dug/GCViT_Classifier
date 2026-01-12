@@ -12,7 +12,8 @@ setup(
         "opencv-python",
         "scikit-learn",
         "tqdm",
-        "keras_cv"
+        "keras_cv",
+        "matplotlib"
     ],
     entry_points={
         "console_scripts": [
