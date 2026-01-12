@@ -5,10 +5,10 @@ from keras import ops
 
 import numpy as np
 
-from model import GCViT
-from training.util import Util
-from training import Data
-from training.config import *
+from gcvit.model import GCViT
+from gcvit.training.util import Util
+from gcvit.training import Data
+from gcvit.training.config import *
 
 # set up gpu so it won't run out of memory?
 # util.gpu_setup()
