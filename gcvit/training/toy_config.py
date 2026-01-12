@@ -60,7 +60,6 @@ MODEL_CONFIGS = {
         "mlp_ratio": 3.0,
         "path_drop": 0.1,
     },
-    # (Optional) keep others if you want, but toy should default to xxtiny.
 }
 
 # ---- Callbacks (lightweight) ----
