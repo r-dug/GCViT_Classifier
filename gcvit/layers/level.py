@@ -1,8 +1,8 @@
 from keras import layers
 
-from .block import Block
-from .feature import GlobalQueryGenerator
-from .feature import ReduceSize
+from gcvit.layers.block import Block
+from gcvit.layers.feature import GlobalQueryGenerator
+from gcvit.layers.feature import ReduceSize
 
 class Level(layers.Layer):
     """GCViT level.
