@@ -17,7 +17,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "gcvit-train = gcvit:main",
+            "gcvit-train = gcvit.main:main",
         ],
     },
 )
