@@ -1,7 +1,7 @@
 import keras
 from keras import layers
 
-from .feature import ReduceSize
+from gcvit.layers.feature import ReduceSize
 
 class PatchEmbed(layers.Layer):
     """Patch embedding block.
